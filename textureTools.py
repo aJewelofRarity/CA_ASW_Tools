@@ -164,7 +164,13 @@ def ApplyTextures(context, meshObj, TexDrop, CharDrop, TexTypeDrop, BoolShader):
 
         BuildBase = CharDrop + TexTypeDrop + "_base.tga"
         BuildSSS = CharDrop + TexTypeDrop + "_Sss.tga"
-        BuildILM = CharDrop + TexTypeDrop + "_ilm.tga"
+
+        if TexTypeDrop == "P":
+            BuildILM = CharDrop + "_ilm.tga"
+        elif TexTypeDrop == "WP":
+            BuildILM = CharDrop + "W_ilm.tga"
+        else:
+            BuildILM = CharDrop + TexTypeDrop + "_ilm.tga"
 
         if CharDrop == "DSL":
             BuildDetail = "SOL_detail.tga"
@@ -234,6 +240,12 @@ def ApplyTextures(context, meshObj, TexDrop, CharDrop, TexTypeDrop, BoolShader):
                         base = base.replace("KYK_base.tga", "DKY_base.tga")
                         sss = sss.replace("KYK_Sss.tga", "DKY_Sss.tga")
                         ilm = ilm.replace("KYK_ilm.tga", "DKY_ilm.tga")
+                if "_wep_" in mat.name.lower():
+                    if CharDrop == "KYK":
+                        base = base.replace("KYK_base.tga", "KYKW_base.tga")
+                        sss = sss.replace("KYK_Sss.tga", "KYKW_Sss.tga")
+                        ilm = ilm.replace("KYK_ilm.tga", "KYKW_ilm.tga")
+
 
                 ## Create Basic Shader
                 mat.use_nodes = True
@@ -267,6 +279,11 @@ def ApplyTextures(context, meshObj, TexDrop, CharDrop, TexTypeDrop, BoolShader):
                         base = base.replace("KYK_base.tga", "DKY_base.tga")
                         sss = sss.replace("KYK_Sss.tga", "DKY_Sss.tga")
                         ilm = ilm.replace("KYK_ilm.tga", "DKY_ilm.tga")
+                if "_wep_" in mat.name.lower():
+                    if CharDrop == "KYK":
+                        base = base.replace("KYK_base.tga", "KYKW_base.tga")
+                        sss = sss.replace("KYK_Sss.tga", "KYKW_Sss.tga")
+                        ilm = ilm.replace("KYK_ilm.tga", "KYKW_ilm.tga")
 
                 ## Create ArcSys Shader (Requires Append)
                 Arc = nodes.new("ShaderNodeGroup")
@@ -428,8 +445,8 @@ class ColorsDrop(bpy.types.PropertyGroup):
             ("W", "Weapon", ""),
             ("W2", "Anji Weapon Overdrive", ""),
             ("D", "Ramlethal Dog", ""),
-            ("P", "Giovanna Bar 1", ""),
-            ("WP", "Giovanna Bar 2", ""),
+            ("P", "Giovanna Powered Up", ""),
+            ("WP", "Rei Powered Up", ""),
             ("G", "May Goshogawara", ""),
             ("Y", "May Yamada", ""),
             ("Flare", "Sol Dragon Install Flare", ""),

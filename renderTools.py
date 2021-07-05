@@ -23,7 +23,7 @@ def ClearMatsMesh(context):
     for i in range(0,len(slots)):
         matIndex=matIndex+1
         obj.active_material_index = matIndex
-        if str(obj.active_material).lower().find("shadow") > 0 or str(obj.active_material).lower().find("outline") > 0:
+        if str(obj.active_material).lower().find("shadow") > 0 or str(obj.active_material).lower().find("outline") > 0 or str(obj.active_material).lower().find("damage_decal") > 0:
             #print("Junk Material found: "+str(obj.active_material.name +". Deleting mesh."))
             bpy.ops.object.material_slot_select()
             bpy.ops.mesh.delete(type='FACE')
