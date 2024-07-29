@@ -30,6 +30,7 @@ def Color_Item_Callback(self, context):
 def Character_Item_Callback(self, context):
     items = []
     chrStrive = [
+        ("ABA", "A.B.A", ""),
         ("ANJ", "Anji", ""),
         ("ASK", "Asuka", ""),
         ("AXL", "Axl", ""),
@@ -44,6 +45,7 @@ def Character_Item_Callback(self, context):
         ("GLD", "Goldlewis", ""),
         ("INO", "I-NO", ""),
         #("JAM", "Jam", ""),
+        ("JHN", "Johnny", ""),
         ("JKO", "Jack'O", ""),
         ("KYK", "Ky", ""),
         ("LEO", "Leo", ""),
@@ -53,6 +55,7 @@ def Character_Item_Callback(self, context):
         ("POT", "Potemkin", ""),
         ("RAM", "Ramlethal", ""),
         ("SIN", "Sin", ""),
+        ("SLY", "Slayer, ""),
         ("SOL", "Sol", ""),
         ("DSL", "Sol Dragon Install", ""),
         ("TST", "Testament", ""),
