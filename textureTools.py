@@ -55,7 +55,7 @@ def Character_Item_Callback(self, context):
         ("POT", "Potemkin", ""),
         ("RAM", "Ramlethal", ""),
         ("SIN", "Sin", ""),
-        ("SLY", "Slayer, ""),
+        ("SLY", "Slayer", ""),
         ("SOL", "Sol", ""),
         ("DSL", "Sol Dragon Install", ""),
         ("TST", "Testament", ""),
